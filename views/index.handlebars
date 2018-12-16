@@ -26,10 +26,12 @@
     </div>
   </div>
 
-  <div class="makeBurger">
-    <h1>This is where we are going to make burgers</h1>
-
-    <input placeholder="Add Burger" id="burgerInput" type="text">
-    <button id="submit">Add</button>
-  </div>
+  <div class="submit-row">
+    <div  class="col-s12">
+      <h4>Make a new burger!</h4>
+        <form action="/burgers" method="POST">
+            <input type="text" id="name" name="burger_name" placeholder="">
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+    </div>
 </div>

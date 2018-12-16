@@ -9,14 +9,3 @@ $(document).on('click', '.devour-btn', function(){
       window.location = "/"
   })
 })
-
-$('#submit').on('click', function(){
- 
-  var burger = {
-      burger_name: $('#burgerInput').val()
-  }
-  $.post('/api/burgers', burger, function(data){
-      console.log(data)
-      window.location = "/"
-  })
-})

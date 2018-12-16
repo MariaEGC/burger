@@ -20,15 +20,16 @@ router.get("/", function(req, res) {
  
 })
 
-///router.post
-
-router.post("/api/burgers", function(req, res) {
-  burger.insertOne(["burger_name", "devoured"], [
-    req.body.burger_name, false
-  ], function(result) {
-    res.json({ id: result.insertId })
-  })
-})
+// Create a New Burger
+router.post('/burgers', function(req, res) {
+  burger.insertOne([
+    'burger_name'
+  ], [
+    req.body.burger_name
+  ], function(data) {
+    res.redirect('/');
+  });
+});
 
 
 ///router.put
