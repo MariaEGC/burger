@@ -1,32 +1,18 @@
-
-
-body{
-    background-color: lightgoldenrodyellow;
+body ,html {
+    margin: 0px;
+    padding: 0px;
+    background-color: yellow;
 }
-
-p{
-    font-size: 30px;
-    font-weight: 3%;
-}
-
-h1{
-    text-shadow: 3px 3px rgb(0, 0, 0, 0.25);
-}
-
 .container {
-	text-align: center;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 50px;
 }
-
-.submit-row {
-    margin-top: 3%;
-	text-align: center;
-}
-
-input#name {
-    width: 25%;
-}
-
-h4 {
-    margin-top: 1%;
-	text-align: center; 
+.header {
+    height: 300px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
