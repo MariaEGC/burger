@@ -1,24 +1,24 @@
-var express = require("express");
+var express = require("express")
 
-var router = express.Router();
+var router = express.Router()
 
 
-var burger = require("../models/burger.js");
+var burger = require("../models/burger.js")
 
 
 
 router.get("/", function(req, res) {
  
   burger.selectAll(function(data) {
-  console.log(data, "result from sel all");
+  console.log(data, "result from sel all")
    var hbsObject = {
      burgers: data
-    };
-    res.render("index", hbsObject);
+    }
+    res.render("index", hbsObject)
  
-  });
+  })
  
-});
+})
 
 ///router.post
 
@@ -26,25 +26,25 @@ router.post("/api/burgers", function(req, res) {
   burger.insertOne(["burger_name", "devoured"], [
     req.body.burger_name, false
   ], function(result) {
-    res.json({ id: result.insertId });
-  });
-});
+    res.json({ id: result.insertId })
+  })
+})
 
 
 ///router.put
 router.put("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = "id = " + req.params.id
   burger.updateOne({
     devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
-      return res.status(404).end();
+      return res.status(404).end()
     } else {
-      res.status(200).end();
+      res.status(200).end()
     }
-  });
-});
+  })
+})
 
 
 
-module.exports = router;
+module.exports = router
